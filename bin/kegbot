@@ -28,8 +28,8 @@ from django.core import management
 from pykeg.core.util import get_version
 from pykeg.util import bugreport
 
-if sys.version_info < (2, 7):
-    sys.stderr.write('Error: Kegbot needs Python 2.7 or newer.\n\n'
+if sys.version_info < (3, 6):
+    sys.stderr.write('Error: Kegbot needs Python 3.6 or newer.\n\n'
                      'Current version: %s\n' % sys.version)
     sys.exit(1)
 

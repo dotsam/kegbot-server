@@ -140,7 +140,7 @@ def subnavitem(parser, token):
     """(% subnavitem <viewname> <title> [exact] %}"""
     tokens = token.split_contents()
     if len(tokens) < 3:
-        raise TemplateSyntaxError, '%s requires at least 3 tokens' % tokens[0]
+        raise TemplateSyntaxError('%s requires at least 3 tokens' % tokens[0])
     return SubNavitemNode(*tokens[1:])
 
 class SubNavitemNode(Node):
@@ -432,7 +432,7 @@ class ChartNode(Node):
         }
 
         chart_data = chart_base
-        for k, v in chart_result.iteritems():
+        for k, v in chart_result.items():
             if k not in chart_data:
                 chart_data[k] = v
             elif isinstance(v, dict):

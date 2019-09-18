@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+
 
 from django.db import models, migrations
 import pykeg.core.fields
@@ -371,15 +371,15 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterUniqueTogether(
             name='stats',
-            unique_together=set([('drink', 'user', 'keg', 'session')]),
+            unique_together={('drink', 'user', 'keg', 'session')},
         ),
         migrations.AlterUniqueTogether(
             name='plugindata',
-            unique_together=set([('plugin_name', 'key')]),
+            unique_together={('plugin_name', 'key')},
         ),
         migrations.AlterUniqueTogether(
             name='notificationsettings',
-            unique_together=set([('user', 'backend')]),
+            unique_together={('user', 'backend')},
         ),
         migrations.AddField(
             model_name='kegtap',
@@ -401,7 +401,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterUniqueTogether(
             name='flowtoggle',
-            unique_together=set([('controller', 'port_name')]),
+            unique_together={('controller', 'port_name')},
         ),
         migrations.AddField(
             model_name='flowmeter',
@@ -411,7 +411,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterUniqueTogether(
             name='flowmeter',
-            unique_together=set([('controller', 'port_name')]),
+            unique_together={('controller', 'port_name')},
         ),
         migrations.AddField(
             model_name='drink',
@@ -457,7 +457,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterUniqueTogether(
             name='authenticationtoken',
-            unique_together=set([('auth_device', 'token_value')]),
+            unique_together={('auth_device', 'token_value')},
         ),
         migrations.AddField(
             model_name='apikey',
