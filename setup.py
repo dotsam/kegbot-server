@@ -14,9 +14,9 @@ DOCLINES = __doc__.split('\n')
 SHORT_DESCRIPTION = DOCLINES[0]
 LONG_DESCRIPTION = '\n'.join(DOCLINES[2:])
 DEPENDENCIES = [
-    'asgi-redis',
-    'Celery==4.2.2',
-    'channels < 2',
+    'Celery',
+    'channels',
+    'channels_redis',
     'django-bootstrap-pagination',
     'django-crispy-forms',
     'django-imagekit',
@@ -34,7 +34,7 @@ DEPENDENCIES = [
     'kegbot-api',
     'kegbot-pyutils',
     'mock',
-    'MySQL-python',
+    'mysqlclient',
     'pillow',
     'protobuf',
     'python-gflags',

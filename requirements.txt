@@ -4,26 +4,26 @@
 #
 #    pip-compile
 #
-amqp==2.5.0               # via kombu
-asgi-redis==1.4.3
-asgiref==1.1.2            # via asgi-redis, channels, daphne
+aioredis==1.2.0           # via channels-redis
+amqp==2.5.1               # via kombu
+asgiref==3.2.2            # via channels, channels-redis, daphne
 asn1crypto==0.24.0        # via cryptography
+async-timeout==3.0.1      # via aioredis
 attrs==19.1.0             # via automat, twisted
-autobahn==19.6.2          # via daphne
+autobahn==19.9.3          # via daphne
 automat==0.7.0            # via twisted
-billiard==3.5.0.5         # via celery
-celery==4.2.2
-certifi==2019.6.16        # via requests
+billiard==3.6.1.0         # via celery
+celery==4.3.0
+certifi==2019.9.11        # via requests
 cffi==1.12.3              # via cryptography
-channels==1.1.8
+channels-redis==2.4.0
+channels==2.2.0
 chardet==3.0.4            # via requests
 colorama==0.4.1           # via rednose
-configparser==3.7.4       # via entrypoints, flake8
 confusable-homoglyphs==3.2.0  # via django-registration
 constantly==15.1.0        # via twisted
-contextlib2==0.5.5        # via vcrpy
 cryptography==2.7         # via autobahn
-daphne==1.4.2             # via channels
+daphne==2.3.0             # via channels
 django-appconf==1.0.3     # via django-imagekit
 django-bootstrap-pagination==1.7.1
 django-crispy-forms==1.7.2
@@ -32,58 +32,59 @@ django-nose==1.4.6
 django-redis==4.10.0
 django-registration==3.0.1
 django-static-precompiler==1.8.2
-django==1.11.22
+django==1.11.24
 entrypoints==0.3          # via flake8
-enum34==1.1.6             # via cryptography, flake8
-flake8==3.7.7
-foursquare==1!2019.2.16
-funcsigs==1.0.2           # via mock
-functools32==3.2.3.post2  # via flake8
+flake8==3.7.8
+foursquare==1!2019.9.11
 gunicorn==19.9.0
-httplib2==0.13.0
+hiredis==1.0.0            # via aioredis
+httplib2==0.13.1
 hyperlink==19.0.0         # via twisted
-idna==2.8                 # via hyperlink, requests
+idna==2.8                 # via hyperlink, requests, yarl
+importlib-metadata==0.23  # via kombu
 incremental==17.5.0       # via twisted
-ipaddress==1.0.22         # via cryptography
 isodate==0.6.0
 jsonfield==2.0.2
 kegbot-api==1.1.0
 kegbot-pyutils==0.1.8
-kombu==4.3.0              # via celery
+kombu==4.6.4              # via celery
 mccabe==0.6.1             # via flake8
 mock==3.0.5
-msgpack-python==0.5.6     # via asgi-redis
-mysql-python==1.2.5
+more-itertools==7.2.0     # via zipp
+msgpack==0.6.1            # via channels-redis
+multidict==4.5.2          # via yarl
+mysqlclient==1.4.4
 nose==1.3.7               # via django-nose
-oauthlib==3.0.1           # via requests-oauthlib
+oauthlib==3.1.0           # via requests-oauthlib
 pilkit==2.0               # via django-imagekit
-pillow==6.0.0
-protobuf==3.8.0
+pillow==6.1.0
+protobuf==3.9.1
 pycodestyle==2.5.0        # via flake8
 pycparser==2.19           # via cffi
 pyflakes==2.1.1           # via flake8
 pyhamcrest==1.9.0         # via twisted
 pysocks==1.7.0            # via tweepy
 python-gflags==3.1.2
-pytz==2019.1
-pyyaml==5.1.1             # via vcrpy
-redis==2.10.6
+pytz==2019.2
+pyyaml==5.1.2             # via vcrpy
+redis==3.3.8
 rednose==1.3.0
-requests-mock==1.6.0
+requests-mock==1.7.0
 requests-oauthlib==1.2.0
 requests==2.22.0
-six==1.12.0               # via asgi-redis, asgiref, autobahn, automat, cryptography, django-appconf, django-imagekit, foursquare, isodate, mock, protobuf, pyhamcrest, requests-mock, tweepy, txaio, vcrpy
+six==1.12.0               # via autobahn, automat, cryptography, django-appconf, django-imagekit, foursquare, isodate, mock, protobuf, pyhamcrest, requests-mock, tweepy, txaio, vcrpy
 termstyle==0.1.11         # via rednose
-tweepy==3.7.0
-twisted==19.2.1           # via daphne
+tweepy==3.8.0
+twisted==19.7.0           # via daphne
 txaio==18.8.1             # via autobahn
-typing==3.7.4             # via django-static-precompiler, flake8
 urllib3==1.25.3           # via requests
-vcrpy==2.0.1
-vine==1.3.0               # via amqp
-whitenoise==4.1.2
+vcrpy==2.1.0
+vine==1.3.0               # via amqp, celery
+whitenoise==4.1.3
 wrapt==1.11.2             # via vcrpy
+yarl==1.3.0               # via vcrpy
+zipp==0.6.0               # via importlib-metadata
 zope.interface==4.6.0     # via twisted
 
 # The following packages are considered to be unsafe in a requirements file:
-# setuptools==41.0.1        # via protobuf, pyhamcrest, rednose, termstyle, zope.interface
+# setuptools==41.2.0        # via protobuf, pyhamcrest, rednose, termstyle, zope.interface

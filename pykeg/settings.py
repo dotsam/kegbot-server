@@ -135,7 +135,7 @@ AUTHENTICATION_BACKENDS = (
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': 'redis://127.0.0.1:6379:1',
+        'LOCATION': 'redis://127.0.0.1:6379/1',
         'OPTIONS': {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
         }
@@ -161,17 +161,18 @@ KEGBOT_PLUGINS = [
 DEMO_MODE = False
 EMBEDDED = False
 
+ASGI_APPLICATION = 'pykeg.web.routing.application'
+
 KEGBOT_BACKEND = 'pykeg.backend.backends.KegbotBackend'
 
 # Channels
 
 CHANNEL_LAYERS = {
     'default': {
-        'BACKEND': 'asgi_redis.RedisChannelLayer',
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
             'hosts': [('localhost', 6379)],
         },
-        'ROUTING': 'pykeg.web.ws.routing.channel_routing',
     }
 }
 
